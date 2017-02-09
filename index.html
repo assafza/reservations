@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript" src="main.js"></script>
   <title></title>
 </head>
 <body>
+  
 
-  <script src="main.js"></script>
+  First name: <input type="text" name="fname" id="fName"><br>
+  <button onclick="myFunction()"> SUBMIT</button>
+  <h1 id = "title"></h1>
+  <p id = "reserve"></p>
+
+</form>
+
+  <script type="text/javascript">
+  function myFunction(){
+  	var name = document.getElementById("fName").value;
+  	var x = claimReservation(name);
+
+   	var text = "";
+  	for (var key in x) {
+  		if (x.hasOwnProperty(key)) {
+    	text += (key + "<br /> ");
+ 		 }
+	}
+	document.getElementById("title").innerHTML = "Reservations in the system:";
+    document.getElementById("reserve").innerHTML = text;
+  }
+  	
+  </script>
+
 </body>
 </html>
